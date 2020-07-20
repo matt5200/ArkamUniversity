@@ -25,8 +25,6 @@ namespace WebApplication1.Controllers
 
         public ActionResult ClassList()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
