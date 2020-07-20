@@ -1,7 +1,9 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Class Liste";
 }
+
+<h1>Course Offerings</h1>
+
 
 <!DOCTYPE html>
 
@@ -11,7 +13,18 @@
     <title>ClassList</title>
 </head>
 <body>
-    <div> 
-    </div>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <% foreach (var classMaster in school.Classes) {  <%
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <% } %>
+    </table>
 </body>
 </html>
