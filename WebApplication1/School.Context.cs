@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School
+namespace WebApplication1
 {
     using System;
     using System.Data.Entity;
