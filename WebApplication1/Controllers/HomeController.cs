@@ -55,6 +55,16 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult UserClasses()
+        {
+            return View();
+        }
+
+        public ActionResult EnrollClass()
+        {
+            return View();
+        }
 
     }
 }

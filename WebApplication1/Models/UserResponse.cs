@@ -10,10 +10,10 @@ namespace WebApplication1.Models
     public class UserResponse
     {
         [Required(ErrorMessage = "Please enter your email")]
-        public string Email { get; set; }
+        public string UserEmail { get; set; }
         [Required(ErrorMessage = "Please enter your password")]
-        public string Password { get; set; }
-        [Required(ErrorMessage = "Please confirm your password")]
-        public string ConfirmEmail { get; set; }
+        public string UserPassword { get; set; }
+        [Compare("UserPassword", ErrorMessage = "Password's don't match. Enter again.")]
+        public string ConfirmPassword { get; set; }
     }
 }
