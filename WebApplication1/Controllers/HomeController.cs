@@ -24,25 +24,37 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+       
         public ActionResult ClassList()
         {
             var model = new Entities();
             return View(model.Classes.AsEnumerable());
         }
 
-        /*public ActionResult Contact()
+        [HttpGet]
+        public ActionResult Register()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Register(Models.UserResponse userResponse)
         {
-            ViewBag.Message = "Your contact page.";
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", userResponse);
+            }
+            else
+            {
+                return View();
+            }
+        }
 
+        public ActionResult Login()
+        {
             return View();
-        }*/
+        }
+
 
     }
 }
