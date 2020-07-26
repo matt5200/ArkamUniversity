@@ -133,5 +133,90 @@ namespace WebApplication1
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual int AddUser(string userEmail, string userPassword, Nullable<bool> userIsAdmin)
+        {
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userIsAdminParameter = userIsAdmin.HasValue ?
+                new ObjectParameter("UserIsAdmin", userIsAdmin) :
+                new ObjectParameter("UserIsAdmin", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser", userEmailParameter, userPasswordParameter, userIsAdminParameter);
+        }
+    
+        public virtual int AddUser2(string userEmail, string userPassword, Nullable<bool> userIsAdmin)
+        {
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userIsAdminParameter = userIsAdmin.HasValue ?
+                new ObjectParameter("UserIsAdmin", userIsAdmin) :
+                new ObjectParameter("UserIsAdmin", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser2", userEmailParameter, userPasswordParameter, userIsAdminParameter);
+        }
+    
+        public virtual int AddUser3(string userEmail, string userPassword, Nullable<bool> userIsAdmin)
+        {
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userIsAdminParameter = userIsAdmin.HasValue ?
+                new ObjectParameter("UserIsAdmin", userIsAdmin) :
+                new ObjectParameter("UserIsAdmin", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser3", userEmailParameter, userPasswordParameter, userIsAdminParameter);
+        }
+    
+        public virtual int AddUser4(string userEmail, string userPassword, Nullable<bool> userIsAdmin)
+        {
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userIsAdminParameter = userIsAdmin.HasValue ?
+                new ObjectParameter("UserIsAdmin", userIsAdmin) :
+                new ObjectParameter("UserIsAdmin", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser4", userEmailParameter, userPasswordParameter, userIsAdminParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> InsertUser(string userEmail, string userPassword, Nullable<bool> userIsAdmin)
+        {
+            var userEmailParameter = userEmail != null ?
+                new ObjectParameter("UserEmail", userEmail) :
+                new ObjectParameter("UserEmail", typeof(string));
+    
+            var userPasswordParameter = userPassword != null ?
+                new ObjectParameter("UserPassword", userPassword) :
+                new ObjectParameter("UserPassword", typeof(string));
+    
+            var userIsAdminParameter = userIsAdmin.HasValue ?
+                new ObjectParameter("UserIsAdmin", userIsAdmin) :
+                new ObjectParameter("UserIsAdmin", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("InsertUser", userEmailParameter, userPasswordParameter, userIsAdminParameter);
+        }
     }
 }

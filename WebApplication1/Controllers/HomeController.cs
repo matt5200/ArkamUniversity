@@ -46,13 +46,30 @@ namespace WebApplication1.Controllers
             }
             else
             {
+                var school = new Entities();
+                school.AddUser4(userResponse.UserEmail, userResponse.UserPassword, false);
                 return View();
             }
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public ActionResult Login(Models.UserResponse userResponse)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {   
+                return View("Index");
+            }
         }
 
         [Authorize]
